@@ -5,13 +5,13 @@ import (
 
 	"github.com/spf13/viper"
 
-	"github.com/jetstack/vault-unsealer/pkg/kv"
-	"github.com/jetstack/vault-unsealer/pkg/kv/aws_kms"
-	"github.com/jetstack/vault-unsealer/pkg/kv/aws_ssm"
-	"github.com/jetstack/vault-unsealer/pkg/kv/cloudkms"
-	"github.com/jetstack/vault-unsealer/pkg/kv/gcs"
+	"github.com/hprotzek/vault-unsealer/pkg/kv"
+	"github.com/hprotzek/vault-unsealer/pkg/kv/aws_kms"
+	"github.com/hprotzek/vault-unsealer/pkg/kv/aws_ssm"
+	"github.com/hprotzek/vault-unsealer/pkg/kv/cloudkms"
+	"github.com/hprotzek/vault-unsealer/pkg/kv/gcs"
 
-	"github.com/jetstack/vault-unsealer/pkg/vault"
+	"github.com/hprotzek/vault-unsealer/pkg/vault"
 )
 
 func vaultConfigForConfig(cfg *viper.Viper) (vault.Config, error) {

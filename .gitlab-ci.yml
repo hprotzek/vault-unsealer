@@ -1,6 +1,6 @@
 variables:
   DOCKER_DRIVER: overlay
-  PKG_PATH: github.com/jetstack/vault-unsealer
+  PKG_PATH: github.com/hprotzek/vault-unsealer
   GORELEASER_HASH: 634f5eedd1000a1eb675c2ca93bbbc889aa0388df76aea3501d7734616910584
 
 stages:

@@ -1,11 +1,11 @@
-GO_PKG = gitlab.jetstack.net/jetstack/vault-unsealer
+GO_PKG = github.com/hprotzek/vault-unsealer
 
-REGISTRY := quay.io/jetstack
+REGISTRY := platformengineering
 IMAGE_NAME := vault-unsealer
-BUILD_TAG := build
+BUILD_TAG := latest
 IMAGE_TAGS := canary
 
-BUILD_IMAGE_NAME := golang:1.9.2
+BUILD_IMAGE_NAME := golang:1.10.1
 
 GOPATH ?= /tmp/go
 

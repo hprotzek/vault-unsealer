@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/jetstack/vault-unsealer/pkg/kv"
+	"github.com/hprotzek/vault-unsealer/pkg/kv"
 )
 
 type fakeKV struct {

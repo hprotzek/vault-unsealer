@@ -8,7 +8,7 @@ import (
 	"github.com/hashicorp/vault/api"
 	"github.com/sirupsen/logrus"
 
-	"github.com/jetstack/vault-unsealer/pkg/kv"
+	"github.com/hprotzek/vault-unsealer/pkg/kv"
 )
 
 // That configures the vault API
@@ -45,6 +45,7 @@ var _ Vault = &vault{}
 // a Vault server.
 type Vault interface {
 	Sealed() (bool, error)
+	Initialized() (bool, error)
 	Unseal() error
 	Init() error
 }
@@ -69,6 +70,14 @@ func (u *vault) Sealed() (bool, error) {
 		return false, fmt.Errorf("error checking status: %s", err.Error())
 	}
 	return resp.Sealed, nil
+}
+
+func (u *vault) Initialized() (bool, error) {
+	resp, err := u.cl.Sys().Health()
+	if err != nil {
+		return false, fmt.Errorf("error checking health: %s", err.Error())
+	}
+	return resp.Initialized, nil
 }
 
 // Unseal will attempt to unseal vault by retrieving keys from the kms service
