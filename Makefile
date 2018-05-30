@@ -1,9 +1,9 @@
 GO_PKG = github.com/hprotzek/vault-unsealer
 
 REGISTRY := platformengineering
-IMAGE_NAME := vault-unsealer
+IMAGE_NAME := halfpipe-vault
 BUILD_TAG := latest
-IMAGE_TAGS := canary
+IMAGE_TAGS := latest
 
 BUILD_IMAGE_NAME := golang:1.10.1
 

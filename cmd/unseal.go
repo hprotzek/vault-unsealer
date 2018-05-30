@@ -7,6 +7,7 @@ import (
 	"github.com/hprotzek/vault-unsealer/pkg/vault"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
+	"os"
 )
 
 const cfgUnsealPeriod = "unseal-period"
@@ -94,6 +95,7 @@ to quickly create a Cobra application.`,
 				}
 
 				logrus.Infof("successfully unsealed vault")
+				os.Exit(0)
 			}()
 			// wait 30 seconds before trying again
 			time.Sleep(time.Second * 30)
